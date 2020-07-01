@@ -15,12 +15,13 @@
 Person::Person(string name, int age, PersonDao* pd): dao(pd)  {
     this->name = name;
     this->age = age;
-    //pd = new PersonImpl();
+    dao = new PersonImpl();
     }
 
 Person::~Person(){
     //nothing to do
     dao = NULL;
+    delete dao;
 }
 
 string Person::getName() const {
@@ -36,6 +37,7 @@ void Person::setAge(int age) {
 }
 
 void Person::save() {
+    cout << "This is Person save function" << endl;
     dao->save(this);
 }
 

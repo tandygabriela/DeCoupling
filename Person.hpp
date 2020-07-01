@@ -34,7 +34,8 @@ public:
 private:
     string name;
     int age;
-    PersonDao* dao; 
+    PersonDao* dao;
+    PersonDao* dao2;
 };
 
 #endif /* person_hpp */
